@@ -2,73 +2,41 @@
 # Date: 3.15.24
 # Program: Choose Your Adventure
 
+from time import sleep
+
 def start_story():
-    print("Welcome to the Adventure Game!")
-    print("You find yourself standing at a crossroads.")
-    print("You can go left, right, or straight ahead.")
+    print("You are an allied captain commanding a company of soldiers shortly after the landing of Normandy")
+    sleep(0.4)
+    print("Its your job to lead the company of 68 people to the Rhine through France.")
+    sleep(0.5)
+    print("You come to a crossroad, one way points to a village the other, to an open field")
 
-    choice = input("What do you choose? (left/right/straight): ").lower()
+    choice = input("What do you choose? (village/open field): ").lower()
 
-    if choice == "left":
+    if choice == "village":
         go_left()
-    elif choice == "right":
+    elif choice == "open field":
         go_right()
-    elif choice == "straight":
-        go_straight()
     else:
         print("Invalid choice. Please try again.")
         start_story()
 
 def go_left():
-    print("You chose to go left.")
-    print("You encounter a dark forest.")
-    print("Do you want to enter the forest or turn back?")
+    print("You chose to lead your troops to the village.")
+    print("You hear an incoming tank battalion")
+    print("Do you want to set up an ambush or face head on?")
 
-    choice = input("What do you choose? (enter/turn back): ").lower()
+    choice = input("What do you choose? (ambush/head on): ").lower()
 
-    if choice == "enter":
-        print("You venture into the forest and find a hidden treasure!")
-    elif choice == "turn back":
-        print("You decide to turn back and return to the crossroads.")
+    if choice == "ambush":
+        print("The Tanks roll by... you yell the order and mortar shells pierce the side of the 3 panthers, one is completely destroyed and the other 2 are incapable of fighting")
+        print("The German soldiers following the tanks open fire, 12 of your men die in the fight. You have 56 men left")
+    elif choice == "head on":
+        print("You dont survive the incoming attack, everyone dies :(")
         start_story()
     else:
         print("Invalid choice. Please try again.")
         go_left()
-
-def go_right():
-    print("You chose to go right.")
-    print("You stumble upon a cave.")
-    print("Do you want to enter the cave or continue on?")
-
-    choice = input("What do you choose? (enter/continue): ").lower()
-
-    if choice == "enter":
-        print("You enter the cave and discover a dragon!")
-        print("Unfortunately, you are eaten by the dragon. Game over!")
-    elif choice == "continue":
-        print("You decide to continue on your journey.")
-        print("You reach a beautiful meadow and enjoy the scenery.")
-    else:
-        print("Invalid choice. Please try again.")
-        go_right()
-
-def go_straight():
-    print("You chose to go straight ahead.")
-    print("You walk for a while and reach a river.")
-    print("Do you want to swim across the river or look for a bridge?")
-
-    choice = input("What do you choose? (swim/look for bridge): ").lower()
-
-    if choice == "swim":
-        print("You bravely swim across the river and reach the other side safely.")
-        print("Congratulations! You've completed your adventure!")
-    elif choice == "look for bridge":
-        print("You search for a bridge but find none.")
-        print("You decide to swim across the river.")
-        print("Unfortunately, you are swept away by the current. Game over!")
-    else:
-        print("Invalid choice. Please try again.")
-        go_straight()
 
 # Start the story
 start_story()
